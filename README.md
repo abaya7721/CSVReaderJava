@@ -3,7 +3,7 @@
 ## Functions
 Reads data from a CSV file.
 Displays all records from the CSV file.
-Display records when filtered by category.
+Display records filtered by category.
 
 
 ## Implementation
@@ -12,10 +12,11 @@ Display records when filtered by category.
 	* Opens a csv file using a path
 	* Uses try catch to handle opening file with resources and catch IO exception if file not found
 	* Reads from the opened file
-	* Closes the file
+	* Get header
+	* Gets all other lines in file
 	* Creates List<String> records from the file to handle operations for it
 	
-2. Class RecordHandler
+2. Class RecordService
 	* FileReader instance
 	* String category
 	* Determines the available categories
@@ -25,9 +26,7 @@ Display records when filtered by category.
 	* Returns the List<String> records
 
 3. Class View
-	* RecordHandler 
-	* Give option [display all, filter]
-	* Get the option, and execute the method from RecordHandlerService associated with the option
+	* RecordService
 	* Display all records or filtered records
 	
 
