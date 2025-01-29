@@ -1,32 +1,34 @@
 # CSVReaderJava
 
-#### Functions
+## Functions
 Reads data from a CSV file.
 Displays all records from the CSV file.
 Display records when filtered by category.
 
 
-Implementation
-// Class Reader
-	- Opens a csv file using a path
-	- Uses try catch to handle opening file with resources and catch IO exception if file not found
-	- Reads from the opened file
-	- Closes the file
-	- Creates List<String> records from the file to handle operations for it
+## Implementation
+1. Class FileReader
+	* String filePath
+	* Opens a csv file using a path
+	* Uses try catch to handle opening file with resources and catch IO exception if file not found
+	* Reads from the opened file
+	* Closes the file
+	* Creates List<String> records from the file to handle operations for it
 	
-// Class RecordHandler
-	- Uses Reader instance
-	- Declares a String category
-	- Determines the available categories
-	- Method to get and set category from the available categories in the csv file
-	- Creates a list records by checking equality of category in parameter and the records in the file
+2. Class RecordHandler
+	* FileReader instance
+	* String category
+	* Determines the available categories
+	* Method to get and set category from the available categories in the csv file
+	* Creates a list records by checking equality of category in parameter and the records in the file
 		- Goes through each string in list and checks using contains(category)
-	- Returns the List<String> records
+	* Returns the List<String> records
 
-// Class View
-	- Give option [display all, filter]
-	- Get the option, and execute the method from RecordHandlerService associated with the option
-	- Display all records or filtered records
+3. Class View
+	* RecordHandler 
+	* Give option [display all, filter]
+	* Get the option, and execute the method from RecordHandlerService associated with the option
+	* Display all records or filtered records
 	
 
 	
