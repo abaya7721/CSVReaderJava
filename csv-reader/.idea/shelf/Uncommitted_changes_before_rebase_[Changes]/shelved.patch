@@ -1,0 +1,65 @@
+Index: ../README.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># CSVReaderJava\r\n\r\n#### Functions\r\nReads data from a CSV file.\r\nDisplays all records from the CSV file.\r\nDisplay records when filtered by category.\r\n\r\n\r\nImplementation\r\n// Class Reader\r\n\t- Opens a csv file using a path\r\n\t- Uses try catch to handle opening file with resources and catch IO exception if file not found\r\n\t- Reads from the opened file\r\n\t- Closes the file\r\n\t- Creates List<String> records from the file to handle operations for it\r\n\t\r\n// Class RecordHandler\r\n\t- Uses Reader instance\r\n\t- Declares a String category\r\n\t- Determines the available categories\r\n\t- Method to get and set category from the available categories in the csv file\r\n\t- Creates a list records by checking equality of category in parameter and the records in the file\r\n\t\t- Goes through each string in list and checks using contains(category)\r\n\t- Returns the List<String> records\r\n\r\n// Class View\r\n\t- Give option [display all, filter]\r\n\t- Get the option, and execute the method from RecordHandlerService associated with the option\r\n\t- Display all records or filtered records\r\n\t\r\n\r\n\t
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../README.md b/../README.md
+--- a/../README.md	(revision 1772cb887358ee7c0f1a9ce7e57fcc94cb517ac5)
++++ b/../README.md	(date 1738185200369)
+@@ -1,32 +1,33 @@
+ # CSVReaderJava
+ 
+-#### Functions
++## Functions
+ Reads data from a CSV file.
+ Displays all records from the CSV file.
+-Display records when filtered by category.
++Display records filtered by category.
+ 
+ 
+-Implementation
+-// Class Reader
+-	- Opens a csv file using a path
+-	- Uses try catch to handle opening file with resources and catch IO exception if file not found
+-	- Reads from the opened file
+-	- Closes the file
+-	- Creates List<String> records from the file to handle operations for it
++## Implementation
++1. Class FileReader
++	* String filePath
++	* Opens a csv file using a path
++	* Uses try catch to handle opening file with resources and catch IO exception if file not found
++	* Reads from the opened file
++	* Get header
++	* Gets all other lines in file
++	* Creates List<String> records from the file to handle operations for it
+ 	
+-// Class RecordHandler
+-	- Uses Reader instance
+-	- Declares a String category
+-	- Determines the available categories
+-	- Method to get and set category from the available categories in the csv file
+-	- Creates a list records by checking equality of category in parameter and the records in the file
++2. Class RecordService
++	* FileReader instance
++	* String category
++	* Determines the available categories
++	* Method to get and set category from the available categories in the csv file
++	* Creates a list records by checking equality of category in parameter and the records in the file
+ 		- Goes through each string in list and checks using contains(category)
+-	- Returns the List<String> records
++	* Returns the List<String> records
+ 
+-// Class View
+-	- Give option [display all, filter]
+-	- Get the option, and execute the method from RecordHandlerService associated with the option
+-	- Display all records or filtered records
++3. Class View
++	* RecordService
++	* Display all records or filtered records
+ 	
+ 
+ 	
+\ No newline at end of file
