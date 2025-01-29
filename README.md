@@ -19,9 +19,14 @@ Implementation
 	- Declares a String category
 	- Determines the available categories
 	- Method to get and set category from the available categories in the csv file
-	- Displays records by checking equality of category in parameter and the records in the file
+	- Creates a list records by checking equality of category in parameter and the records in the file
 		- Goes through each string in list and checks using contains(category)
-	- Display all records by going through the List<String> records
+	- Returns the List<String> records
+
+// Class View
+	- Give option [display all, filter]
+	- Get the option, and execute the method from RecordHandlerService associated with the option
+	- Display all records or filtered records
 	
 
 	
