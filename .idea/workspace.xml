@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15e93aa6-94a0-438a-a642-4b2a74e3330c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/csv-reader/src/main/java/learn/library/domain/RecordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/csv-reader/src/main/java/learn/library/domain/RecordService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/csv-reader/src/main/java/learn/library/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/csv-reader/src/main/java/learn/library/view/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSVReaderJava/learn/library/domain/RecordService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSVReaderJava/learn/library/domain/RecordService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSVReaderJava/learn/library/view/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSVReaderJava/learn/library/view/View.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,13 +19,49 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "abaya7721"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/abaya7721/CSVReaderJava.git",
+    "accountId": "fe7e8dfa-b55b-456f-934d-5adb08600162"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2sLyzefdNAYq5CtcCfWlrwPtSeh" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
-    "git-widget-placeholder": "filter-records-category"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "#7 on filter-records-category",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/abayardo/Documents/java-2024-12-work/GitHub/CSVReaderJava"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\abayardo\Documents\java-2024-12-work\GitHub\CSVReaderJava" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="15e93aa6-94a0-438a-a642-4b2a74e3330c" name="Changes" comment="" />
+      <created>1738249413544</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1738249413544</updated>
+    </task>
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

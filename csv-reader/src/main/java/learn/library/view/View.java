@@ -8,13 +8,13 @@ import java.util.List;
 public class View {
     private final RecordService recordService;
 
-    public View(String path) throws FileNotFoundException {
+    public View(String path) {
         this.recordService = new RecordService(path);
     }
 
     public void showAllRecords() {
         List<String> records = recordService.getAllRecords();
-
+        System.out.println("ALL EXPENSE RECORDS");
         for (String record : records) {
             System.out.println(record);
         }
@@ -27,7 +27,7 @@ public class View {
         List<String> records = recordService.getAllRecords();
 
         for (String category : categories) {
-            System.out.println("Grouped by: " + category);
+            System.out.println("FILTERED\nExpense record: " + category.toUpperCase());
             System.out.println(header);
             for (String record : records) {
                 if (record.contains(category)) {

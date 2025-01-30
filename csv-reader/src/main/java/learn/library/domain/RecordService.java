@@ -8,9 +8,8 @@ import java.util.List;
 
 public class RecordService {
     private final FileOpenReader reader;
-    private String category;
 
-    public RecordService(String path) throws FileNotFoundException {
+    public RecordService(String path) {
         reader = new FileOpenReader(path);
     }
 
@@ -21,7 +20,7 @@ public class RecordService {
     public List<String> getRecordsByCategory() {
         List<String> records = getAllRecords();
         List<String> categories = new ArrayList<>();
-
+        records.removeFirst();
         for (String record : records) {
             String[] line = record.split(",");
             if (!categories.contains(line[1])) {
