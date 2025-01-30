@@ -115,75 +115,56 @@ public class RecordService {
     public boolean validateExpenseRecord(LocalDate date, String category, String description, BigDecimal amount, String paymentMethod) {
 
         BigDecimal zero = new BigDecimal("0.00");
-        String dateString;
-        //String recordBuilder = "";
+
         boolean invalid = false;
 
         if (date.isAfter(LocalDate.now())) {
             System.out.println("Date cannot be future date.");
-        } else {
-            dateString = date.toString();
-            //recordBuilder = dateString;
+            return invalid;
         }
-
         if (category.isEmpty()) {
             System.out.println("Category cannot be empty.");
             return invalid;
-        } else {
-            //recordBuilder = recordBuilder + "," + category;
         }
-
         if (description.isEmpty()) {
             System.out.println("Description cannot be empty.");
             return invalid;
-        } else {
-            //recordBuilder = recordBuilder + "," + description;
         }
 
-        if (amount == null) {
-            System.out.println("Amount cannot be empty.");
-        } else if (amount.compareTo(zero) < 0.00) {
-            System.out.println("Amount cannot be less than 0.00.");
+        if (amount.compareTo(zero) < 0.00 || amount == null) {
+            System.out.println("Amount cannot be empty or negative.");
             return invalid;
-
-        } else if (amount != null && amount.compareTo(zero) > 0.00) {
-            amount = amount.setScale(2, RoundingMode.HALF_UP);
-            //recordBuilder = recordBuilder + "," + amount;
         }
-
         if (paymentMethod.isEmpty()) {
             System.out.println("Payment method cannot be empty.");
             return invalid;
-        } else {
-            //recordBuilder = recordBuilder + "," + paymentMethod;
-
-            if (!invalid) {
-                System.out.println("Bad record. Cannot add record with missing or bad values.");
-                return invalid;
-            }
-            //System.out.println(recordBuilder);
-            return true;
         }
+//      if (!invalid) {
+//          System.out.println("Bad record. Cannot add record with missing or bad values.");
+//          return invalid;
+//      }
+        return true;
     }
 
+
     //add parameters to createExpenseRecord
-    public String createExpenseRecord(LocalDate newDate, String category, String description, BigDecimal amount, String paymentMethod) {
-//        LocalDate newDate = LocalDate.of(2024, 4, 1);
-//        String category = "Travel";
-//        String description = "Taxi ride";
-//        BigDecimal amount = new BigDecimal("17.88");
-//        String paymentMethod = "Cash";
+    public void createExpenseRecord(LocalDate newDate, String category, String description, BigDecimal amount, String paymentMethod) {
 
         String recordBuilder = "";
 
         if (validateExpenseRecord(newDate, category, description, amount, paymentMethod)) {
-            recordBuilder = newDate+","+category+","+description+","+amount+","+paymentMethod;
-            fileManager.writeToFile(recordBuilder);
-            return "The following record was added to expense report. \n Expense" + recordBuilder;
+            recordBuilder = newDate + "," + category + "," + description + "," + amount.setScale(2, RoundingMode.HALF_UP) + "," + paymentMethod;
+            if(getAllRecords().contains(recordBuilder)){
+                System.out.println("Record is duplicate");
+            }
+            else {
+                fileManager.writeToFile(recordBuilder);
+                System.out.println("The following record was added to expense report. \n" + getOriginalHeader() + "\n" + recordBuilder);
+            }
+        } else {
+            System.out.println("Bad record");
         }
-        return "Bad record";
+
     }
-
-
 }
 
