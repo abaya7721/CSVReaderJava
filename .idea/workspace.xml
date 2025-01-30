@@ -6,12 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="15e93aa6-94a0-438a-a642-4b2a74e3330c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csv-reader/src/main/java/learn/library/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/csv-reader/src/main/java/learn/library/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/csv-reader/src/main/java/learn/library/domain/RecordDataAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/csv-reader/src/main/java/learn/library/domain/RecordDataAccess.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/csv-reader/src/main/java/learn/library/domain/RecordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/csv-reader/src/main/java/learn/library/domain/RecordService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csv-reader/src/main/java/learn/library/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/csv-reader/src/main/java/learn/library/view/View.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSVReaderJava/learn/library/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSVReaderJava/learn/library/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CSVReaderJava/learn/library/domain/RecordService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSVReaderJava/learn/library/domain/RecordService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSVReaderJava/learn/library/view/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSVReaderJava/learn/library/view/View.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,39 +25,59 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "abaya7721"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;abaya7721&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/abaya7721/CSVReaderJava.git",
-    "accountId": "fe7e8dfa-b55b-456f-934d-5adb08600162"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/abaya7721/CSVReaderJava.git&quot;,
+    &quot;accountId&quot;: &quot;fe7e8dfa-b55b-456f-934d-5adb08600162&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2sLyzefdNAYq5CtcCfWlrwPtSeh" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "#7 on filter-records-category",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/abayardo/Documents/java-2024-12-work/GitHub/CSVReaderJava"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature-expense-records-with-local-date-and-big-decimal&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/abayardo/Documents/java-2024-12-work/GitHub/CSVReaderJava&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\abayardo\Documents\java-2024-12-work\GitHub\CSVReaderJava" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="learn.library.Main" />
+      <module name="CSVReaderJava" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="learn.library.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

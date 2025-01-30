@@ -8,7 +8,7 @@ public class RecordDataAccess {
     private String expenseInformation;
     private BigDecimal cost;
 
-    public RecordDataAccess(LocalDate date, String expenseInformation) {
+    public RecordDataAccess(LocalDate date, String expenseInformation, BigDecimal cost) {
         this.date = date;
         this.expenseInformation = expenseInformation;
         this.cost = cost;
@@ -40,9 +40,6 @@ public class RecordDataAccess {
 
     @Override
     public String toString() {
-        return "RecordDataAccess{" +
-                "expenseInformation='" + expenseInformation + '\'' +
-                ", date=" + date +
-                '}';
+        return date + " " + expenseInformation + " cost= " + cost+"\n";
     }
 }

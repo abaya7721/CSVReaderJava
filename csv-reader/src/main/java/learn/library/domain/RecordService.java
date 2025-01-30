@@ -2,6 +2,8 @@ package learn.library.domain;
 
 import learn.library.data.FileOpenReader;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -23,7 +25,12 @@ public class RecordService {
     }
 
     public String getHeader() {
-        return getAllRecords().removeFirst();
+        String header = reader.readFile().removeFirst();
+        String amount = "Amount";
+        header = header.replace("Payment Method", amount);
+        header = header.replaceFirst(amount, "Payment-Method");
+        header = header.replace(",", "  ");
+        return header;
     }
 
     public List<String> getRecordsByCategory() {
@@ -37,6 +44,7 @@ public class RecordService {
         }
         return categories;
     }
+
 
     public List<LocalDate> getDateRecords() {
         List<String> records = getAllRecords();
@@ -54,36 +62,60 @@ public class RecordService {
         return dates;
     }
 
-    public List<String> removeDates(){
+    public List<BigDecimal> getExpenses() {
+        List<String> records = getAllRecords();
+        List<BigDecimal> expenses = new ArrayList<>();
+        for (String record : records) {
+            String[] line = record.split(",");
+            String currencyField = line[3];
+            expenses.add(new BigDecimal(currencyField).setScale(2, RoundingMode.HALF_UP));
+        }
+        return expenses;
+    }
+
+    public List<String> removeDates() {
         List<String> recordsNoDates = new ArrayList<>();
 
         for (String record : getAllRecords()) {
             List<String> line = new ArrayList<>(Arrays.stream(record.split(",")).toList());
-            //line.removeIf(field -> line.contains("\\d{4}-\\d{2}-\\d{2}"));
-            //record.replace("\\d{4}-\\d{2}-\\d{2}", "" );
             line.remove(0);
             recordsNoDates.add(String.valueOf(line));
         }
-        System.out.println(recordsNoDates);
+        //System.out.println(recordsNoDates);
         return recordsNoDates;
     }
 
-    public void removeCost(){
+    public List<String> removeCostAndDates() {
+        List<String> recordsExtracted = removeDates();
+        List<String> trimmedRecords = new ArrayList<>();
 
-    }
-
-    public List<RecordDataAccess> dataAccess(){
-        List<LocalDate> dates = getDateRecords();
-        List<String> expenseRecords = removeDates();
-
-        for(int i = 0; i < dates.size(); i++){
-            recordData.add(new RecordDataAccess(dates.get(i), expenseRecords.get(i)));
+        for (String record : recordsExtracted) {
+            List<String> line = new ArrayList<>(Arrays.stream(record.split(",")).toList());
+            line.remove(2);
+            trimmedRecords.add(String.valueOf(line));
         }
-        System.out.println(recordData.toString());
-
-        return null;
+        //System.out.println(recordsNoDates);
+        return trimmedRecords;
     }
 
+    public void dataAccess() {
+        List<LocalDate> dates = getDateRecords();
+        List<BigDecimal> expensesList = getExpenses();
+        List<String> records = removeCostAndDates();
+
+        System.out.println(getHeader()+"\n");
+        for (int i = 0; i < records.size(); i++) {
+            recordData.add(new RecordDataAccess(dates.get(i), records.get(i).trim(), expensesList.get(i)));
+        }
+
+        System.out.println("Before January 31, 2024");
+        for(RecordDataAccess filterRecords : recordData){
+            if(filterRecords.getDate().isBefore(LocalDate.of(2024, 1, 31))) {
+                System.out.print(filterRecords);
+            }
+        }
+        //System.out.println(recordData);
+    }
 
 
 }
