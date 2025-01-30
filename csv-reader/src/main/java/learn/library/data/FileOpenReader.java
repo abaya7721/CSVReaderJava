@@ -7,7 +7,6 @@ import java.util.List;
 
 public class FileOpenReader {
 
-        private String header = "Date,Category,Description,Amount,Payment Method";
         private final Path path;
 
         public FileOpenReader(String filePath) {
@@ -17,9 +16,7 @@ public class FileOpenReader {
         public List<String> readFile() {
             List<String> fileRecords = new ArrayList<>();
             try {
-                for (String record : Files.readAllLines(path)) {
-                        fileRecords.add(record);
-                }
+                fileRecords.addAll(Files.readAllLines(path));
             } catch (IOException e) {
                 System.out.println(e.getMessage());
             }
