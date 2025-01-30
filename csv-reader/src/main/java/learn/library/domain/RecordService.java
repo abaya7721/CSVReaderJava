@@ -1,6 +1,6 @@
 package learn.library.domain;
 
-import learn.library.data.FileOpenReader;
+import learn.library.data.FileManager;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -10,11 +10,11 @@ import java.util.Arrays;
 import java.util.List;
 
 public class RecordService {
-    private final FileOpenReader reader;
+    private final FileManager reader;
     List<RecordDataAccess> recordData = new ArrayList<>();
 
     public RecordService(String path) {
-        reader = new FileOpenReader(path);
+        reader = new FileManager(path);
 
     }
 
@@ -22,6 +22,10 @@ public class RecordService {
         List<String> records = reader.readFile();
         records.removeFirst();
         return records;
+    }
+
+    public String getOriginalHeader() {
+        return reader.readFile().removeFirst();
     }
 
     public String getHeader() {
@@ -98,23 +102,16 @@ public class RecordService {
         return trimmedRecords;
     }
 
-    public void dataAccess() {
+    public List<RecordDataAccess> dataAccess() {
         List<LocalDate> dates = getDateRecords();
         List<BigDecimal> expensesList = getExpenses();
         List<String> records = removeCostAndDates();
 
-        System.out.println(getHeader()+"\n");
         for (int i = 0; i < records.size(); i++) {
             recordData.add(new RecordDataAccess(dates.get(i), records.get(i).trim(), expensesList.get(i)));
         }
 
-        System.out.println("Before January 31, 2024");
-        for(RecordDataAccess filterRecords : recordData){
-            if(filterRecords.getDate().isBefore(LocalDate.of(2024, 1, 31))) {
-                System.out.print(filterRecords);
-            }
-        }
-        //System.out.println(recordData);
+        return recordData;
     }
 
 

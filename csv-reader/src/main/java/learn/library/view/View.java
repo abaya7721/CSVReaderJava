@@ -23,13 +23,13 @@ public class View {
 
     public void showCategoriesRecords() {
         List<String> categories = recordService.getRecordsByCategory();
-        String header = recordService.getHeader();
-        header = header.replace("Category,", "");
+        String originalHeader = recordService.getOriginalHeader();
+        originalHeader = originalHeader.replace("Category,", "");
         List<String> records = recordService.getAllRecords();
 
         for (String category : categories) {
-            System.out.println("FILTERED\nExpense record: " + category.toUpperCase());
-            System.out.println(header);
+            System.out.println("FILTERED\nExpense record for: " + category.toUpperCase());
+            System.out.println(originalHeader);
             for (String record : records) {
                 if (record.contains(category)) {
                     record = record.replace(category+",", "");
@@ -53,10 +53,13 @@ public class View {
     }
 
     public void viewDataAccessible() {
-       /* List<RecordDataAccess> records = recordService.dataAccess();
-        for (RecordDataAccess record : records) {
-            System.out.println(record.toString());
-        }*/
-        recordService.dataAccess();
+        System.out.println("Before January 31, 2024");
+        System.out.println(recordService.getHeader() + "\n");
+        for (RecordDataAccess filterRecords : recordService.dataAccess()) {
+            if (filterRecords.getDate().isBefore(LocalDate.of(2024, 1, 31))) {
+                System.out.print(filterRecords);
+            }
+        }
+        //System.out.println(recordData)
     }
 }

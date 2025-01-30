@@ -7,9 +7,9 @@ public class Main {
 
     public static void main(String[] args) {
         View view = new View("expense_report.csv");
-        //view.showAllRecords();
+        view.showAllRecords();
         System.out.println();
-        //view.showCategoriesRecords();
+        view.showCategoriesRecords();
         //view.showDateRecords();
         //view.recordsWithoutDate();
         view.viewDataAccessible();
