@@ -23,6 +23,7 @@ public class View {
     public void showCategoriesRecords() {
         List<String> categories = recordService.getRecordsByCategory();
         String header = recordService.getAllRecords().getFirst();
+        header = header.replace("Category,", "");
         List<String> records = recordService.getAllRecords();
 
         for (String category : categories) {
@@ -30,6 +31,7 @@ public class View {
             System.out.println(header);
             for (String record : records) {
                 if (record.contains(category)) {
+                    record = record.replace(category+",", "");
                     System.out.println(record);
                 }
             }
