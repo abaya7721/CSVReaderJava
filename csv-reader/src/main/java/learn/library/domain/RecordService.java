@@ -15,8 +15,9 @@ public class RecordService {
 
     public RecordService(String path) {
         reader = new FileManager(path);
-
     }
+
+    
 
     public List<String> getAllRecords() {
         List<String> records = reader.readFile();

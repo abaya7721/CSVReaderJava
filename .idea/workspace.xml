@@ -6,13 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="15e93aa6-94a0-438a-a642-4b2a74e3330c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csv-reader/src/main/java/learn/library/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/csv-reader/src/main/java/learn/library/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csv-reader/src/main/java/learn/library/data/FileOpenReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/csv-reader/src/main/java/learn/library/data/FileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/csv-reader/src/main/java/learn/library/data/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/csv-reader/src/main/java/learn/library/data/FileManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/csv-reader/src/main/java/learn/library/domain/RecordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/csv-reader/src/main/java/learn/library/domain/RecordService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csv-reader/src/main/java/learn/library/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/csv-reader/src/main/java/learn/library/view/View.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSVReaderJava/learn/library/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSVReaderJava/learn/library/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSVReaderJava/learn/library/domain/RecordService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSVReaderJava/learn/library/domain/RecordService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSVReaderJava/learn/library/view/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSVReaderJava/learn/library/view/View.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,16 +43,16 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/abayardo/Documents/java-2024-12-work/GitHub/CSVReaderJava&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "data-validation-for-new-entries",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/abayardo/Documents/java-2024-12-work/GitHub/CSVReaderJava"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\abayardo\Documents\java-2024-12-work\GitHub\CSVReaderJava" />
