@@ -23,7 +23,8 @@ public class RecordDataAccess {
     }
 
     public String getExpenseInformation() {
-        return expenseInformation;
+        expenseInformation.split(", ");
+        return
     }
 
     public void setExpenseInformation(String expenseInformation) {

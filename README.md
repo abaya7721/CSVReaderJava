@@ -24,10 +24,15 @@ Display records filtered by category.
 	* Creates a list records by checking equality of category in parameter and the records in the file
 		- Goes through each string in list and checks using contains(category)
 	* Returns the List<String> records
+    * Add new record to expense report after validation 
+        - Method with five parameters
 
-3. Class View
-	* RecordService
-	* Display all records or filtered records
+3. Class RecordDataAccess
+   * Converts the associated string values of fields date and amount in the records of expense report to LocalDate and BigDecimal
+
+4. Class View
+	* RecordService instance
+	* Controls the viewing of records
 	
 
 	
