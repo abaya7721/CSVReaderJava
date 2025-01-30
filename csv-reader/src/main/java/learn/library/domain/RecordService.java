@@ -10,26 +10,25 @@ import java.util.Arrays;
 import java.util.List;
 
 public class RecordService {
-    private final FileManager reader;
+    private final FileManager fileManager;
     List<RecordDataAccess> recordData = new ArrayList<>();
 
     public RecordService(String path) {
-        reader = new FileManager(path);
-
+        fileManager = new FileManager(path);
     }
 
     public List<String> getAllRecords() {
-        List<String> records = reader.readFile();
+        List<String> records = fileManager.readFile();
         records.removeFirst();
         return records;
     }
 
     public String getOriginalHeader() {
-        return reader.readFile().removeFirst();
+        return fileManager.readFile().removeFirst();
     }
 
     public String getHeader() {
-        String header = reader.readFile().removeFirst();
+        String header = fileManager.readFile().removeFirst();
         String amount = "Amount";
         header = header.replace("Payment Method", amount);
         header = header.replaceFirst(amount, "Payment-Method");
@@ -110,10 +109,62 @@ public class RecordService {
         for (int i = 0; i < records.size(); i++) {
             recordData.add(new RecordDataAccess(dates.get(i), records.get(i).trim(), expensesList.get(i)));
         }
-
         return recordData;
     }
 
+    public boolean validateExpenseRecord(LocalDate date, String category, String description, BigDecimal amount, String paymentMethod) {
 
+        BigDecimal zero = new BigDecimal("0.00");
+
+        boolean invalid = false;
+
+        if (date.isAfter(LocalDate.now())) {
+            System.out.println("Date cannot be future date.");
+            return invalid;
+        }
+        if (category.isEmpty()) {
+            System.out.println("Category cannot be empty.");
+            return invalid;
+        }
+        if (description.isEmpty()) {
+            System.out.println("Description cannot be empty.");
+            return invalid;
+        }
+
+        if (amount.compareTo(zero) < 0.00 || amount == null) {
+            System.out.println("Amount cannot be empty or negative.");
+            return invalid;
+        }
+        if (paymentMethod.isEmpty()) {
+            System.out.println("Payment method cannot be empty.");
+            return invalid;
+        }
+//      if (!invalid) {
+//          System.out.println("Bad record. Cannot add record with missing or bad values.");
+//          return invalid;
+//      }
+        return true;
+    }
+
+
+    //add parameters to createExpenseRecord
+    public void createExpenseRecord(LocalDate newDate, String category, String description, BigDecimal amount, String paymentMethod) {
+
+        String recordBuilder = "";
+
+        if (validateExpenseRecord(newDate, category, description, amount, paymentMethod)) {
+            recordBuilder = newDate + "," + category + "," + description + "," + amount.setScale(2, RoundingMode.HALF_UP) + "," + paymentMethod;
+            if(getAllRecords().contains(recordBuilder)){
+                System.out.println("Record is duplicate");
+            }
+            else {
+                fileManager.writeToFile(recordBuilder);
+                System.out.println("The following record was added to expense report. \n" + getOriginalHeader() + "\n" + recordBuilder);
+            }
+        } else {
+            System.out.println("Bad record");
+        }
+
+    }
 }
 
