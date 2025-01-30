@@ -25,8 +25,12 @@ public class RecordService {
     }
 
     public String getHeader() {
-        
-        return reader.readFile().removeFirst();
+        String header = reader.readFile().removeFirst();
+        String amount = "Amount";
+        header = header.replace("Payment Method", amount);
+        header = header.replaceFirst(amount, "Payment-Method");
+        header = header.replace(",", "  ");
+        return header;
     }
 
     public List<String> getRecordsByCategory() {
@@ -99,11 +103,18 @@ public class RecordService {
         List<BigDecimal> expensesList = getExpenses();
         List<String> records = removeCostAndDates();
 
-        for (int i = 0; i < dates.size(); i++) {
-            recordData.add(new RecordDataAccess(dates.get(i), records.get(i), expensesList.get(i)));
+        System.out.println(getHeader()+"\n");
+        for (int i = 0; i < records.size(); i++) {
+            recordData.add(new RecordDataAccess(dates.get(i), records.get(i).trim(), expensesList.get(i)));
         }
-        System.out.println(getHeader());
-        System.out.println(recordData.toString());
+
+        System.out.println("Before January 31, 2024");
+        for(RecordDataAccess filterRecords : recordData){
+            if(filterRecords.getDate().isBefore(LocalDate.of(2024, 1, 31))) {
+                System.out.print(filterRecords);
+            }
+        }
+        //System.out.println(recordData);
     }
 
 

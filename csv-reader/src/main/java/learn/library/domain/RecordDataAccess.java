@@ -40,6 +40,6 @@ public class RecordDataAccess {
 
     @Override
     public String toString() {
-        return "\n"+date + " " + expenseInformation + " cost= " + cost +"\n";
+        return date + " " + expenseInformation + " cost= " + cost+"\n";
     }
 }
