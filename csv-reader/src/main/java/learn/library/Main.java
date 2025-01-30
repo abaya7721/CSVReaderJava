@@ -1,14 +1,18 @@
 package learn.library;
 
-import learn.library.data.FileOpenReader;
 import learn.library.view.View;
 
-import java.io.FileNotFoundException;
 
 public class Main {
 
-    public static void main(String[] args) throws FileNotFoundException {
-       View view = new View("C:/Users/abayardo/Documents/java-2024-12-work/GitHub/CSVReaderJava/csv-reader/src/main/java/learn/library/data/expense_report.csv");
-       view.showAllRecords();
+    public static void main(String[] args) {
+        View view = new View("expense_report.csv");
+        //view.showAllRecords();
+        System.out.println();
+        //view.showCategoriesRecords();
+        //view.showDateRecords();
+        //view.recordsWithoutDate();
+        view.viewDataAccessible();
+
     }
 }
