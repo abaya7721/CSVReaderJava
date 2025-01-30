@@ -1,8 +1,8 @@
 package learn.library.view;
 
+import learn.library.domain.RecordDataAccess;
 import learn.library.domain.RecordService;
 
-import java.io.FileNotFoundException;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -53,6 +53,10 @@ public class View {
     }
 
     public void viewDataAccessible() {
+       /* List<RecordDataAccess> records = recordService.dataAccess();
+        for (RecordDataAccess record : records) {
+            System.out.println(record.toString());
+        }*/
         recordService.dataAccess();
     }
 }

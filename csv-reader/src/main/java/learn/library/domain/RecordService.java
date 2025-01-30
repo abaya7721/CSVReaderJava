@@ -2,6 +2,7 @@ package learn.library.domain;
 
 import learn.library.data.FileOpenReader;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -38,6 +39,7 @@ public class RecordService {
         return categories;
     }
 
+
     public List<LocalDate> getDateRecords() {
         List<String> records = getAllRecords();
         List<LocalDate> dates = new ArrayList<>();
@@ -54,7 +56,18 @@ public class RecordService {
         return dates;
     }
 
-    public List<String> removeDates(){
+    public List<BigDecimal> getExpenses() {
+        List<String> records = getAllRecords();
+        List<BigDecimal> expenses = new ArrayList<>();
+        for (String record : records) {
+            String[] line = record.split(",");
+            String currencyField = line[3];
+            expenses.add(new BigDecimal(currencyField));
+        }
+        return expenses;
+    }
+
+    public List<String> removeDates() {
         List<String> recordsNoDates = new ArrayList<>();
 
         for (String record : getAllRecords()) {
@@ -64,26 +77,33 @@ public class RecordService {
             line.remove(0);
             recordsNoDates.add(String.valueOf(line));
         }
-        System.out.println(recordsNoDates);
+        //System.out.println(recordsNoDates);
         return recordsNoDates;
     }
 
-    public void removeCost(){
+    public List<String> removeCostAndDates() {
+        List<String> recordsExtracted = removeDates();
+        List<String> trimmedRecords = new ArrayList<>();
 
+        for (String record : recordsExtracted) {
+            List<String> line = new ArrayList<>(Arrays.stream(record.split(",")).toList());
+            line.remove(2);
+            trimmedRecords.add(String.valueOf(line));
+        }
+        //System.out.println(recordsNoDates);
+        return trimmedRecords;
     }
 
-    public List<RecordDataAccess> dataAccess(){
+    public void dataAccess() {
         List<LocalDate> dates = getDateRecords();
-        List<String> expenseRecords = removeDates();
+        List<BigDecimal> expensesList = getExpenses();
+        List<String> records = removeCostAndDates();
 
-        for(int i = 0; i < dates.size(); i++){
-            recordData.add(new RecordDataAccess(dates.get(i), expenseRecords.get(i)));
+        for (int i = 0; i < dates.size(); i++) {
+            recordData.add(new RecordDataAccess(dates.get(i), records.get(i), expensesList.get(i)));
         }
         System.out.println(recordData.toString());
-
-        return null;
     }
-
 
 
 }
