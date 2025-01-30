@@ -40,10 +40,6 @@ public class RecordDataAccess {
 
     @Override
     public String toString() {
-        return "RecordDataAccess{" +
-                "date=" + date +
-                ", expenseInformation='" + expenseInformation + '\'' +
-                ", cost=" + cost +
-                '}';
+        return "\n"+date + " " + expenseInformation + " cost= " + cost +"\n";
     }
 }

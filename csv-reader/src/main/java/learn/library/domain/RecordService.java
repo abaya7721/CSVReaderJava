@@ -3,6 +3,7 @@ package learn.library.domain;
 import learn.library.data.FileOpenReader;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -24,7 +25,8 @@ public class RecordService {
     }
 
     public String getHeader() {
-        return getAllRecords().removeFirst();
+        
+        return reader.readFile().removeFirst();
     }
 
     public List<String> getRecordsByCategory() {
@@ -62,7 +64,7 @@ public class RecordService {
         for (String record : records) {
             String[] line = record.split(",");
             String currencyField = line[3];
-            expenses.add(new BigDecimal(currencyField));
+            expenses.add(new BigDecimal(currencyField).setScale(2, RoundingMode.HALF_UP));
         }
         return expenses;
     }
@@ -72,8 +74,6 @@ public class RecordService {
 
         for (String record : getAllRecords()) {
             List<String> line = new ArrayList<>(Arrays.stream(record.split(",")).toList());
-            //line.removeIf(field -> line.contains("\\d{4}-\\d{2}-\\d{2}"));
-            //record.replace("\\d{4}-\\d{2}-\\d{2}", "" );
             line.remove(0);
             recordsNoDates.add(String.valueOf(line));
         }
@@ -102,6 +102,7 @@ public class RecordService {
         for (int i = 0; i < dates.size(); i++) {
             recordData.add(new RecordDataAccess(dates.get(i), records.get(i), expensesList.get(i)));
         }
+        System.out.println(getHeader());
         System.out.println(recordData.toString());
     }
 
