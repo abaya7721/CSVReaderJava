@@ -7,8 +7,9 @@
     <list default="true" id="15e93aa6-94a0-438a-a642-4b2a74e3330c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/csv-reader/src/main/java/learn/library/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/csv-reader/src/main/java/learn/library/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csv-reader/src/main/java/learn/library/domain/RecordDataAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/csv-reader/src/main/java/learn/library/domain/RecordDataAccess.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/csv-reader/src/main/java/learn/library/domain/RecordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/csv-reader/src/main/java/learn/library/domain/RecordService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSVReaderJava/learn/library/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSVReaderJava/learn/library/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSVReaderJava/learn/library/domain/RecordService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSVReaderJava/learn/library/domain/RecordService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -3,6 +3,9 @@ package learn.library;
 import learn.library.domain.RecordService;
 import learn.library.view.View;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
 
 public class Main {
 
@@ -16,6 +19,8 @@ public class Main {
         //view.viewDataAccessible();
 
         RecordService service = new RecordService("expense_report.csv");
-        System.out.println(service.createExpenseRecord());
+        //System.out.println(service.createExpenseRecord());
+
+        service.createExpenseRecord(LocalDate.of(2024, 4,3), "Food", "Bagels for meeting", new BigDecimal("90"), "Company Card");
     }
 }
