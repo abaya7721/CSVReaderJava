@@ -9,19 +9,26 @@ import java.util.List;
 
 public class RecordService {
     private final FileOpenReader reader;
+    List<RecordDataAccess> recordData = new ArrayList<>();
 
     public RecordService(String path) {
         reader = new FileOpenReader(path);
+
     }
 
     public List<String> getAllRecords() {
-        return reader.readFile();
+        List<String> records = reader.readFile();
+        records.removeFirst();
+        return records;
+    }
+
+    public String getHeader() {
+        return getAllRecords().removeFirst();
     }
 
     public List<String> getRecordsByCategory() {
         List<String> records = getAllRecords();
         List<String> categories = new ArrayList<>();
-        records.removeFirst();
         for (String record : records) {
             String[] line = record.split(",");
             if (!categories.contains(line[1])) {
@@ -34,7 +41,6 @@ public class RecordService {
     public List<LocalDate> getDateRecords() {
         List<String> records = getAllRecords();
         List<LocalDate> dates = new ArrayList<>();
-        records.removeFirst();
         for (String record : records) {
             String[] line = record.split(",");
             String dateField = line[0];
@@ -47,7 +53,37 @@ public class RecordService {
         }
         return dates;
     }
-    
+
+    public List<String> removeDates(){
+        List<String> recordsNoDates = new ArrayList<>();
+
+        for (String record : getAllRecords()) {
+            List<String> line = new ArrayList<>(Arrays.stream(record.split(",")).toList());
+            //line.removeIf(field -> line.contains("\\d{4}-\\d{2}-\\d{2}"));
+            //record.replace("\\d{4}-\\d{2}-\\d{2}", "" );
+            line.remove(0);
+            recordsNoDates.add(String.valueOf(line));
+        }
+        System.out.println(recordsNoDates);
+        return recordsNoDates;
+    }
+
+    public void removeCost(){
+
+    }
+
+    public List<RecordDataAccess> dataAccess(){
+        List<LocalDate> dates = getDateRecords();
+        List<String> expenseRecords = removeDates();
+
+        for(int i = 0; i < dates.size(); i++){
+            recordData.add(new RecordDataAccess(dates.get(i), expenseRecords.get(i)));
+        }
+        System.out.println(recordData.toString());
+
+        return null;
+    }
+
 
 
 }

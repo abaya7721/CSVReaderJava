@@ -2,7 +2,6 @@ package learn.library;
 
 import learn.library.view.View;
 
-import java.io.FileNotFoundException;
 
 public class Main {
 
@@ -11,6 +10,9 @@ public class Main {
         //view.showAllRecords();
         System.out.println();
         //view.showCategoriesRecords();
-        view.showDateRecords();
+        //view.showDateRecords();
+        //view.recordsWithoutDate();
+        view.viewDataAccessible();
+
     }
 }

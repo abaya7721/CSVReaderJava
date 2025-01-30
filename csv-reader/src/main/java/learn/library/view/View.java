@@ -23,7 +23,7 @@ public class View {
 
     public void showCategoriesRecords() {
         List<String> categories = recordService.getRecordsByCategory();
-        String header = recordService.getAllRecords().getFirst();
+        String header = recordService.getHeader();
         header = header.replace("Category,", "");
         List<String> records = recordService.getAllRecords();
 
@@ -46,5 +46,13 @@ public class View {
         for (LocalDate date : dateRecords) {
             System.out.println(date);
         }
+    }
+
+    public void recordsWithoutDate(){
+        recordService.removeDates();
+    }
+
+    public void viewDataAccessible() {
+        recordService.dataAccess();
     }
 }
