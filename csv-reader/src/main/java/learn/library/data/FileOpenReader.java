@@ -7,7 +7,7 @@ import java.util.List;
 
 public class FileOpenReader {
 
-        private final Path path;
+        private Path path;
 
         public FileOpenReader(String filePath) {
             this.path = Paths.get(filePath);

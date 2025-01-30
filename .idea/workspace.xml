@@ -8,12 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/csv-reader/src/main/java/learn/library/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/csv-reader/src/main/java/learn/library/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/csv-reader/src/main/java/learn/library/data/FileOpenReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/csv-reader/src/main/java/learn/library/data/FileOpenReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csv-reader/src/main/java/learn/library/domain/RecordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/csv-reader/src/main/java/learn/library/domain/RecordService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csv-reader/src/main/java/learn/library/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/csv-reader/src/main/java/learn/library/view/View.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSVReaderJava/learn/library/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSVReaderJava/learn/library/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSVReaderJava/learn/library/data/FileOpenReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSVReaderJava/learn/library/data/FileOpenReader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSVReaderJava/learn/library/domain/RecordService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSVReaderJava/learn/library/domain/RecordService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSVReaderJava/learn/library/view/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSVReaderJava/learn/library/view/View.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,5 +25,26 @@
 }]]></component>
   <component name="TaskManager">
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="e4bbdfb2-5bf2-4598-8a39-787363f37eee" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+        <entry key="e4bbdfb2-5bf2-4598-8a39-787363f37eee">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
