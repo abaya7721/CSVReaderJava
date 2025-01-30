@@ -22,9 +22,17 @@ public class RecordDataAccess {
         this.date = date;
     }
 
-    public String getExpenseInformation() {
-        expenseInformation.split(", ");
-        return
+    public String getExpenseCategory() {
+        String[] line = expenseInformation.split(", ");
+        return line[0];
+    }
+    public String getExpenseDescription() {
+        String[] line = expenseInformation.split(", ");
+        return line[1];
+    }
+    public String getExpensePaymentMethod() {
+        String[] line = expenseInformation.split(", ");
+        return line[2];
     }
 
     public void setExpenseInformation(String expenseInformation) {

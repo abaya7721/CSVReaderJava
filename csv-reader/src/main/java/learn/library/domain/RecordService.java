@@ -112,11 +112,12 @@ public class RecordService {
         return recordData;
     }
 
-    public String validateExpenseRecord(LocalDate date, String category, String description, BigDecimal amount, String paymentMethod) {
+    public boolean validateExpenseRecord(LocalDate date, String category, String description, BigDecimal amount, String paymentMethod) {
 
         BigDecimal zero = new BigDecimal("0.00");
         String dateString;
         String recordBuilder = "";
+        boolean invalid = false;
 
         if (date.isAfter(LocalDate.now())) {
             System.out.println("Date cannot be future date.");
@@ -127,46 +128,60 @@ public class RecordService {
 
         if (category.isEmpty()) {
             System.out.println("Category cannot be empty.");
+            return invalid;
         } else {
             recordBuilder = recordBuilder + "," + category;
         }
+
         if (description.isEmpty()) {
             System.out.println("Description cannot be empty.");
+            return invalid;
         } else {
             recordBuilder = recordBuilder + "," + description;
         }
+
         if (amount == null) {
             System.out.println("Amount cannot be empty.");
         } else if (amount.compareTo(zero) < 0.00) {
             System.out.println("Amount cannot be less than 0.00.");
+            return invalid;
+
         } else if (amount != null && amount.compareTo(zero) > 0.00) {
             amount = amount.setScale(2, RoundingMode.HALF_UP);
             recordBuilder = recordBuilder + "," + amount;
         }
+
         if (paymentMethod.isEmpty()) {
             System.out.println("Payment method cannot be empty.");
+            return invalid;
+        } else {
+            recordBuilder = recordBuilder + "," + paymentMethod;
+
+            if (recordBuilder.isEmpty()) {
+                System.out.println("Record is empty");
+                return invalid;
+            }
+            System.out.println(recordBuilder);
+            return true;
         }
-        if (recordBuilder.isEmpty()) {
-            System.out.println("Record is empty");
-        }
-        System.out.println(recordBuilder);
-        return recordBuilder;
     }
 
-    public void createExpenseRecord() {
+    public String createExpenseRecord() {
         LocalDate newDate = LocalDate.of(2024, 4, 1);
         String category = "Travel";
         String description = "Taxi ride";
         BigDecimal amount = new BigDecimal("17.88");
         String paymentMethod = "Cash";
 
-
-
+        if (validateExpenseRecord(newDate, category, description, amount, paymentMethod)) {
+            return "Good";
+        }
+        return "Bad record";
     }
 
 
     public void addExpenseRecord() {
-        //String expenseReportRecord = validateExpenseRecord();
+
 
     }
 
