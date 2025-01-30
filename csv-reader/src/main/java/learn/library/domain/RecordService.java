@@ -153,7 +153,7 @@ public class RecordService {
         return recordBuilder;
     }
 
-    public  createExpenseRecord() {
+    public void createExpenseRecord() {
         LocalDate newDate = LocalDate.of(2024, 4, 1);
         String category = "Travel";
         String description = "Taxi ride";
