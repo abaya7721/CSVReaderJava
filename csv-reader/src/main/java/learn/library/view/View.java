@@ -3,6 +3,7 @@ package learn.library.view;
 import learn.library.domain.RecordService;
 
 import java.io.FileNotFoundException;
+import java.time.LocalDate;
 import java.util.List;
 
 public class View {
@@ -36,6 +37,14 @@ public class View {
                 }
             }
             System.out.println();
+        }
+    }
+
+    public void showDateRecords() {
+        List<LocalDate> dateRecords = recordService.getDateRecords();
+        System.out.println("ALL DATE RECORDS");
+        for (LocalDate date : dateRecords) {
+            System.out.println(date);
         }
     }
 }
