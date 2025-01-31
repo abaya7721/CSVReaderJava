@@ -32,7 +32,7 @@ public class View {
             System.out.println(originalHeader);
             for (String record : records) {
                 if (record.contains(category)) {
-                    record = record.replace(category+",", "");
+                    record = record.replace(category + ",", "");
                     System.out.println(record);
                 }
             }
@@ -48,7 +48,7 @@ public class View {
         }
     }
 
-    public void recordsWithoutDate(){
+    public void recordsWithoutDate() {
         recordService.removeDates();
     }
 
@@ -60,6 +60,5 @@ public class View {
                 System.out.print(filterRecords);
             }
         }
-        //System.out.println(recordData)
     }
 }

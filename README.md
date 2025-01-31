@@ -19,7 +19,7 @@ Display records filtered by category.
 2. Class RecordService
 	* FileReader instance
 	* String category
-	* Determines the available categories
+	* Determines the categories
 	* Method to get and set category from the available categories in the csv file
 	* Creates a list records by checking equality of category in parameter and the records in the file
 		- Goes through each string in list and checks using contains(category)

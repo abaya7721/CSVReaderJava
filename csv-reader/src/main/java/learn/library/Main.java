@@ -21,6 +21,7 @@ public class Main {
         RecordService service = new RecordService("expense_report.csv");
         //System.out.println(service.createExpenseRecord());
 
-        service.createExpenseRecord(LocalDate.of(2024, 4,3), "Food", "Bagels for meeting", new BigDecimal("90"), "Company Card");
+        service.writeExpenseRecord(LocalDate.of(2024, 4,3), "Food", "Bagels for meeting", new BigDecimal("90"), "Company Card");
+        service.writeExpenseRecord(LocalDate.of(2024, 4,4), "Food", "Bagels for meeting", new BigDecimal("90"), "Company Card");
     }
 }

@@ -130,6 +130,7 @@ public class RecordService {
             System.out.println("Description cannot be empty.");
             return invalid;
         }
+
         if (amount.compareTo(zero) < 0.00 || amount == null) {
             System.out.println("Amount cannot be empty or negative.");
             return invalid;
@@ -138,14 +139,18 @@ public class RecordService {
             System.out.println("Payment method cannot be empty.");
             return invalid;
         }
+//      if (!invalid) {
+//          System.out.println("Bad record. Cannot add record with missing or bad values.");
+//          return invalid;
+//      }
         return true;
     }
 
 
-    // Writes validated record to the csv file
-    public void writeExpenseRecord(LocalDate newDate, String category, String description, BigDecimal amount, String paymentMethod) {
+    //add parameters to createExpenseRecord
+    public void createExpenseRecord(LocalDate newDate, String category, String description, BigDecimal amount, String paymentMethod) {
 
-        String recordBuilder;
+        String recordBuilder = "";
 
         if (validateExpenseRecord(newDate, category, description, amount, paymentMethod)) {
             recordBuilder = newDate + "," + category + "," + description + "," + amount.setScale(2, RoundingMode.HALF_UP) + "," + paymentMethod;
@@ -154,11 +159,12 @@ public class RecordService {
             }
             else {
                 fileManager.writeToFile(recordBuilder);
-                System.out.println("The following record was added to expense report \n" + getOriginalHeader() + "\n" + recordBuilder);
+                System.out.println("The following record was added to expense report. \n" + getOriginalHeader() + "\n" + recordBuilder);
             }
         } else {
             System.out.println("Bad record");
         }
+
     }
 }
 
